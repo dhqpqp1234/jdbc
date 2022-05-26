@@ -24,12 +24,14 @@ public class BookApp {
       
       //bookDao.authorDelete(9);
       
+      
       List <BooKVo> bookList = bookDao.bookSelect();
       for(int i=0; i<bookList.size(); i++) {
     	  
     	  BooKVo bookVo = bookList.get(i);
     	  System.out.println(bookVo.getTitle()+","+bookVo.getPubs()+","
     			  			+bookVo.getPubDate()+","+bookVo.getAuthorName());
+      
       }
    }
 
