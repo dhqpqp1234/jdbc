@@ -191,7 +191,7 @@ public class BookDao {
 				query += " select book_id, ";
 				query += " 		  title, ";
 				query += "        pubs, ";
-				query += "        pub_date, ";
+				query += "        to_char(pub_date,'YYYY-MM-DD'), ";
 				query += "        author_name ";
 				query += " from book ";
 				System.out.println(query);
@@ -209,7 +209,7 @@ public class BookDao {
 					int bookId = rs.getInt("book_id");
 					String title = rs.getString("title");
 					String pubs = rs.getString("pubs");
-					String pubDate = rs.getString("pub_date");
+					String pubDate = rs.getString("pub_date,'YYYY-MM-DD'");
 					String authorName = rs.getString("author_name");
 
 					BookVo bookVo = new BookVo(bookId, title, pubs, pubDate,authorName );
